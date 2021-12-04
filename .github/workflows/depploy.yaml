@@ -4,6 +4,7 @@ name: Deploy Docker
 on:
   push:
     tags:
+      - '*'
 
 jobs:
   Deploy:
