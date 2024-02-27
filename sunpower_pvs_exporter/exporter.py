@@ -96,7 +96,8 @@ class SunPowerPVSupervisorCollector(object):
         """
         Return the list of communication interfaces' network status
         """
-        return self._get(command="Get_Comm").get("networkstatus", {})
+        return {}
+#         return self._get(command="Get_Comm").get("networkstatus", {})
 
     @property
     def devices(self):
