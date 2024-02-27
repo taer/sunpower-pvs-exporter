@@ -87,8 +87,8 @@ class SunPowerPVSupervisorCollector(object):
                 logging.warning("Failed to issue command %s: %s", command, err)
                 return dict()
             finally:
-                logging.debug("command=%s response_code=%d delta=%0.2f",
-                              command, response.status_code, delta)
+                logging.info("command=%s response_code=%d delta=%0.2f" size=%d,
+                              command, response.status_code, delta, len(response.text))
                 logging.debug(response.text)
 
     @property
@@ -110,19 +110,23 @@ class SunPowerPVSupervisorCollector(object):
         """
         Return the status of the Grid Profile setting
         """
-        return self._get(command="GridProfileGet")
+        return None
+#         return self._get(command="GridProfileGet")
 
     def connect(self):
         """
         Start a configuration session with the PVS
         """
-        return self._get(command="Start").get("supervisor", {})
+#         return self._get(command="Start").get("supervisor", {})
+        return {}
 
     def disconnect(self):
         """
         Stop the configuration session with the PVS
         """
-        return self._get(command="Stop")
+#         return self._get(command="Stop")
+        return {}
+
 
     @staticmethod
     def from_kilo(value, base=1000):
