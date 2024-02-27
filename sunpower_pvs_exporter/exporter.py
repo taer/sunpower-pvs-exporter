@@ -87,7 +87,7 @@ class SunPowerPVSupervisorCollector(object):
                 logging.warning("Failed to issue command %s: %s", command, err)
                 return dict()
             finally:
-                logging.info("command=%s response_code=%d delta=%0.2f" size=%d,
+                logging.info("command=%s response_code=%d delta=%0.2f size=%d",
                               command, response.status_code, delta, len(response.text))
                 logging.debug(response.text)
 
